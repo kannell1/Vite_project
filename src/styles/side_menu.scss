@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "TTLakes";
+  src: url("/TTLakesCondensed-Regular.ttf");
+}
+
+.active {
+  color: gray;
+}
+.active::before {
+  position: absolute;
+  left: -20px;
+  top: -6px;
+  width: 4px;
+  height: 40px;
+  border-radius: 2px;
+  content: "";
+  background-color: rgba(65, 246, 215, 1);
+}
+
+.side_menu {
+  font-family: "TTLakes";
+  background-color: rgb(255, 255, 255);
+  height: 100vh;
+  width: 300px;
+  display: none;
+
+  &__navigation {
+    position: relative;
+
+    &-logo {
+      padding: 30px 20px;
+    }
+
+    &--icon {
+      background-color: #ff3e79;
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &-search {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        background-color: #ff3e79;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    &-list {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      &--li {
+        font-weight: 500;
+        font-size: 16px;
+        position: relative;
+      }
+    }
+
+    &-group_icon {
+      display: flex;
+      gap: 16px;
+      padding-left: 20px;
+      padding-top: 240px;
+    }
+
+    &-contacts {
+      padding-left: 20px;
+      padding-top: 16px;
+    }
+
+    &-languages {
+      display: flex;
+      gap: 7px;
+
+      &-active {
+        color: rgba(126, 126, 130, 1);
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    display: block;
+  }
+}
