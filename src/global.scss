@@ -1,0 +1,43 @@
+@use "/src/styles/header.scss" as header;
+@use "/src/styles/main.scss" as main;
+@use "/src/styles/sidebar.scss" as sidebar;
+@use "/src/styles/variables.scss" as vars;
+@use "/src/styles/footer.scss" as footer;
+@use "/src/styles/sidebar_mobile.scss" as sidebar-mobile;
+@use "/src/styles/modal-feedback.scss" as modal-feedback;
+@use "/src/styles/modal-call.scss" as modal-call;
+
+@font-face {
+  font-family: "TTLakes";
+  src: url("./fonts/TTLakes-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TTLakes";
+  src: url("./fonts/TTLakes-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TTLakes";
+  src: url("./fonts/TTLakes-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TTLakes";
+  src: url("./fonts/TTLakes-Light.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+:root {
+  --font-primary: "TTLakes", sans-serif;
+  --font-bold: 700;
+  --font-light: 200;
+  --font-medium: 500;
+}

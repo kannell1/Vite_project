@@ -1,0 +1,235 @@
+@font-face {
+  font-family: "TTLakes";
+  src: url("/TTLakesCondensed-Regular.ttf");
+}
+
+.sidebar-mobile {
+  &__item {
+    &--active {
+      color: gray;
+
+      &::before {
+        position: absolute;
+        left: -21px;
+        top: -6px;
+        width: 4px;
+        height: 40px;
+        border-radius: 2px;
+        content: "";
+        background-color: rgba(65, 246, 215, 1);
+      }
+    }
+  }
+
+  &--open {
+    transform: translateX(0) !important;
+    display: block;
+  }
+
+  font-family: "TTLakes";
+  background-color: rgb(255, 255, 255);
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease-in-out;
+  height: 100vh;
+  width: 320px;
+
+  @media (max-width: 1369px) {
+    display: block;
+  }
+
+  @media (min-width: 768px) and (max-width: 1369px) {
+    width: 440px;
+  }
+
+  &__nav {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__logo {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      left: 100px;
+      padding: 24px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+      }
+    }
+
+    &__icon {
+      background-color: #ff3e79;
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 1);
+        border: 1px solid #ff3e79;
+
+        img {
+          filter: brightness(0) saturate(100%) invert(26%) sepia(89%)
+            saturate(2084%) hue-rotate(325deg) brightness(98%) contrast(101%);
+        }
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+
+      &--search {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        background-color: #ff3e79;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 1);
+          border: 1px solid #ff3e79;
+
+          img {
+            filter: brightness(0) saturate(100%) invert(26%) sepia(89%)
+              saturate(2084%) hue-rotate(325deg) brightness(98%) contrast(101%);
+          }
+        }
+      }
+
+      &--close {
+        position: absolute;
+        top: 30px;
+        left: 26px;
+        background-color: #ff3e79;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+
+    &__list {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 40px;
+      flex-grow: 1;
+
+      &__item {
+        font-weight: 500;
+        font-size: 16px;
+        position: relative;
+        padding: 0px 0;
+
+        a {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+
+    &__bottom-section {
+      padding: 0 20px 32px 20px;
+      border-top: none;
+    }
+
+    &__icon-group {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    &__contacts {
+      margin-bottom: 20px;
+
+      p {
+        font-size: 14px;
+        color: #1b1c21;
+        margin-bottom: 4px;
+      }
+
+      h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #1b1c21;
+        margin-top: 4px;
+        margin-bottom: 16px;
+      }
+    }
+
+    &__languages {
+      display: flex;
+      gap: 7px;
+
+      &__item {
+        background: none;
+        border: none;
+        font-size: 16px;
+        font-weight: 500;
+        color: #1b1c21;
+        cursor: pointer;
+        padding: 0;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #7e7e82;
+        }
+
+        &--active {
+          color: #7e7e82 !important;
+        }
+      }
+    }
+  }
+}
+
+.main--menu-overlay,
+.header--menu-overlay,
+.sidebar__nav--menu-overlay {
+  position: relative;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.main--menu-overlay::before,
+.header--menu-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  pointer-events: auto;
+  background: rgba(0, 0, 0, 0.1);
+}

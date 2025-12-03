@@ -1,0 +1,186 @@
+@font-face {
+  font-family: "TTLakes";
+  src: url("/TTLakesCondensed-Regular.ttf");
+}
+
+.sidebar {
+  &__item {
+    &--active {
+      color: gray;
+
+      &::before {
+        position: absolute;
+        left: -20px;
+        top: -6px;
+        width: 4px;
+        height: 40px;
+        border-radius: 2px;
+        content: "";
+        background-color: rgba(65, 246, 215, 1);
+      }
+    }
+  }
+
+  font-family: "TTLakes";
+  background-color: rgb(255, 255, 255);
+  height: 100vh;
+  width: 300px;
+  display: block;
+
+  @media (max-width: 1369px) {
+    display: none;
+  }
+
+  &__nav {
+    position: fixed;
+    height: 100vh;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__logo {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      top: 5px;
+      left: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+      }
+    }
+
+    &__icon {
+      background-color: #ff3e79;
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #ff3e79;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 1);
+        border: 1px solid #ff3e79;
+
+        img {
+          filter: brightness(0) saturate(100%) invert(26%) sepia(89%)
+            saturate(2084%) hue-rotate(325deg) brightness(98%) contrast(101%);
+        }
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+
+      &--search {
+        position: absolute;
+        top: 30px;
+        right: 70px;
+        background-color: #ff3e79;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 1);
+          border: 1px solid #ff3e79;
+
+          img {
+            filter: brightness(0) saturate(100%) invert(26%) sepia(89%)
+              saturate(2084%) hue-rotate(325deg) brightness(98%) contrast(101%);
+          }
+        }
+      }
+    }
+
+    &__list {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 40px;
+      flex-grow: 1;
+
+      &__item {
+        font-weight: 500;
+        font-size: 16px;
+        position: relative;
+        padding: 0px 0;
+
+        a {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+
+    &__bottom-section {
+      padding: 0 20px 32px 20px;
+      border-top: none;
+    }
+
+    &__icon-group {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    &__contacts {
+      margin-bottom: 20px;
+
+      p {
+        font-size: 14px;
+        color: #1b1c21;
+        margin-bottom: 4px;
+      }
+
+      h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #1b1c21;
+        margin-top: 4px;
+        margin-bottom: 16px;
+      }
+    }
+
+    &__languages {
+      display: flex;
+      gap: 7px;
+
+      &__item {
+        background: none;
+        border: none;
+        font-size: 16px;
+        font-weight: 500;
+        color: #1b1c21;
+        cursor: pointer;
+        padding: 0;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #7e7e82;
+        }
+
+        &--active {
+          color: #7e7e82 !important;
+        }
+      }
+    }
+  }
+}
